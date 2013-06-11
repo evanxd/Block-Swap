@@ -1,50 +1,65 @@
+/******************/
+/*			Setup			*/
+/******************/
+
 @import url("http://meyerweb.com/eric/tools/css/reset/reset.css");
 @font-face {font-family: Futura1; src: url("../e/fonts/FuturaStd-CondensedLight.otf");}
 @font-face {font-family: Futura2; src: url("../e/fonts/FuturaStd-Condensed.otf");}		
 @font-face {font-family: Futura3; src: url("../e/fonts/FuturaStd-CondensedBold.otf");}
 
+/********************/
+/*			Layout			*/
+/********************/
+
 body {background: #000000; min-height: 1000px; font-family: "Georgia";}
 
-#logo {background: url("../i/o/logo.png") no-repeat; width: 200px; height: 23px; float: left;}
+/********************/
+/*			Header			*/
+/********************/
 
 header {background: #131313; height: 80px; color: #efefef; font-family: "Futura1"; box-shadow: inset 0 -20px 10px -10px black;}
+	header nav {width: 960px; margin: 0 auto; padding-top: 1.6em;}
+		header nav #logo {background: url("../i/o/logo.png") no-repeat; width: 200px; height: 23px; float: left;}
+		header nav ol {float: right; font-size: 1.5em; /*text-transform: uppercase;*/}
+			header nav ol li {display: inline-block; padding-left: 2em; text-shadow: 1px 1px 0 #000000;}
+			header nav ol li:first-child {padding-left: 0;}
+			header nav ol li a:link {color: #dedede; text-decoration: none;}
+			header nav ol li a:hover {color: #bcbcbc;}
+			header nav ol li a:visited {color: #dedede;}
+			header nav ol li a:active {color: #bcbcbc;}
 
-header nav {width: 960px; margin: 0 auto; padding-top: 1.6em;}
-	header nav ol {float: right; font-size: 1.5em; /*text-transform: uppercase;*/}
-		header nav ol li {display: inline-block; padding-left: 2em; text-shadow: 1px 1px 0 #000000;}
-		header nav ol li:first-child {padding-left: 0;}
-		header nav ol li a:link {color: #dedede; text-decoration: none;}
-		header nav ol li a:hover {color: #bcbcbc;}
-		header nav ol li a:visited {color: #dedede;}
-		header nav ol li a:active {color: #bcbcbc;}
+/********************/
+/*			Content			*/
+/********************/
 
 #container {background: url("../i/o/bgblue.jpg") no-repeat; height: 750px; width: 1200px; margin: 0 auto;}
 
-#container-contents {width: 960px; height: auto; margin: 0 auto; padding: 35px 0 0 0;
-	-webkit-perspective:500;
-	-moz-perspective:500;
-	-ms-perspective:500;
-	-o-perspective:500;
-	perspective:500;}
+	main#contents {width: 960px; height: auto; margin: 0 auto; padding: 35px 0 0 0;
+		-webkit-perspective:500;
+		-moz-perspective:500;
+		-ms-perspective:500;
+		-o-perspective:500;
+		perspective:500;}
 
-#puzzlebox {background: url("../i/o/f.jpg") no-repeat; float: right; padding: 25px; margin: 0 auto; width: 720px; height: 450px;
-	-webkit-transform: rotateX(1deg);
-	-moz-transform: rotateX(1deg);
-	-o-transform: rotateX(1deg);
-	transform: rotateX(1deg);}
+		section#directions {float: left; width: 160px; height: auto;}
+			section#directions div {font-size: .9em; margin: 25px 0 25px;}
+				section#directions div:first-child {margin-top: 0;}
+				section#directions div h6 {font-weight: bold; text-decoration: underline; font-size: 1.2em; margin-bottom: .5em; text-shadow: 1px 1px 0 #dedede;}
+				section#directions #limit {margin-top: 15px;}
+				section#directions #limit a {font-size: 3em; text-shadow: 1px 1px 0 #dedede;}
+				section#directions #limit img {vertical-align: bottom; margin-right: 15px; width: 35px; height: 35px;}
 
-#a-tool {position: absolute; padding: 20px; background: #efefef; border-radius: 10px; border: 5px solid black; box-shadow: 5px 5px 20px 5px black; font-size: .9em;}
+		#puzzle {background: url("../i/o/f.jpg") no-repeat; float: right; padding: 25px; margin: 0 auto; width: 720px; height: 450px;
+			-webkit-transform: rotateX(1deg);
+			-moz-transform: rotateX(1deg);
+			-o-transform: rotateX(1deg);
+			transform: rotateX(1deg);}
 
-#directions {float: left; width: 160px; height: auto;}
-#directions div {font-size: .9em; margin: 25px 0 25px;}
-	#directions div:first-child {margin-top: 0;}
-	#directions div h6 {font-weight: bold; text-decoration: underline; font-size: 1.2em; margin-bottom: .5em; text-shadow: 1px 1px 0 #dedede;}
-	#directions #limit {margin-top: 15px;}
-	#directions #limit a {font-size: 3em; text-shadow: 1px 1px 0 #dedede;}
-	#directions #limit img {vertical-align: bottom; margin-right: 15px; width: 35px; height: 35px;}
+/********************************/
+/*			Misc Visual Classes			*/
+/********************************/
 
-body.active #can-puz {cursor: pointer;}
-
+body.active #puzzlebox > canvas {cursor: pointer;}
 .cta, .cta * {
 	cursor: pointer;
 	-webkit-touch-callout: none;
@@ -54,6 +69,10 @@ body.active #can-puz {cursor: pointer;}
 	-ms-user-select: none;
 	user-select: none;
 }
+
+/************************/
+/*			CTA Styling			*/
+/************************/
 
 .cta-puz {position: relative; background: #131313; width: 120px; height: 44px;}
 	.cta-puz a {text-decoration: none;}

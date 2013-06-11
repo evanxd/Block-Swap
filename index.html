@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Umberto Boccioni: A Digital Experience | Games: Puzzle</title>
+	<title>Umberto Boccioni: A Digital Experience | Games: Self-Portrait Puzzle</title>
 	<link rel="stylesheet" href="c/puzzle.css" />
 </head>
 <body>
 
-<!--<div id="a-tool"><p>Admin Tools</p></br><p>Game options:</p><a href="#timerStarted" onclick="startTime(); init();">start</a></div>-->
-
-<header>
-	<nav>
-		<div id="logo"></div>
-		<ol>
-			<li><a href="#">Introduction</a></li><li><a href="#">Digital Exhibition</a></li><li><a href="#">Gallery</a></li><li><a href="#">Games</a></li>
-		</ol>
-	</nav>
-</header>
+	<header>
+		<nav>
+			<div id="logo"></div>
+			<ol>
+				<li><a href="#">Introduction</a></li><li><a href="#">Digital Exhibition</a></li><li><a href="#">Gallery</a></li><li><a href="#">Games</a></li>
+			</ol>
+		</nav>
+	</header>
 
 	<div id="container">
-	
-		<div id="container-contents">	
-		
-			<div id="directions">
+		<main id="contents">	
+			<section id="directions">
 				<div>
 					<h6>What Is This?</h6>
 					<p>A block-swapping puzzle game where you must re-complete the image before the timer runs out!</p>
@@ -37,29 +33,21 @@
 					<h6>Your Reward</h6>
 					<p>A royalty-free, downloadable .zip of Boccioni's artwork featured on this site</p>
 				</div>
-				<div class="cta" onclick="startTime(); init();">
+				<div class="cta" onclick="startTimer(); init();">
 					<div class="cta-puz">
 						<a><p id="cta-puz-play">Play Puzzle</p></a>
 					</div>
-				</div>	
-			
-			</div>	
-			
-			<div id="puzzlebox">
-				<canvas id="can-puz" width="720" height="450" onclick="onCanvasClick(event);"></canvas>		
+				</div>
+			</section><!-- #directions -->
+			<div id="puzzle">
+				<canvas id="can-puz" width="720" height="450" onclick="selectPiece(event);"></canvas>
 			</div>
-	
-			
-		</div>
-		
-	</div>
-	
-<footer>
+		</main><!-- #contents -->
+	</div><!-- #container -->
 
-</footer>
+</body>
 
 <script type="text/javascript" src="j/puzzle.js"></script>
 <script type="text/javascript" src="j/puzzle-timer.js"></script>
 
-</body>
 </html>

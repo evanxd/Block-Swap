@@ -2,7 +2,7 @@ var min = document.getElementById("minutes");
 var sec = document.getElementById("seconds");
 var timerStarted = false;
 
-  function startTime() {
+  function startTimer() {
 	"use strict";
 	if (timerStarted == true) {
 		return;

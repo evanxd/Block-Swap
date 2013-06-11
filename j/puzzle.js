@@ -63,7 +63,7 @@ else {
 		drawPieces();
 	};
 
-	function onCanvasClick(e) {
+	function selectPiece(e) {
 
 		clickX = e.offsetX;
 		clickY = e.offsetY;
