@@ -18,8 +18,7 @@ function canvasSupport() {
 // only enable puzzle functionality if canvas support exists
 if (!canvasSupport) {
 	alert("Your browser does not support Canvas! You must be using Internet Explorer 8 or older - Please maim yourself and update your browser.")
-}
-else {
+} else {
 
 	// define variables
 	var can, ctx, img, clickX, clickY, selected1, selected2;
@@ -45,11 +44,9 @@ else {
 			return;
 		};
 
-		can = document.getElementById("can-puz");
+		can = document.getElementById("puzzle");
+		can.className = "playing";
 		ctx = can.getContext('2d');
-		
-		// FIX: add styling on canvas
-		document.body.className = "active";	
 
 		img = new Image();
 		img.src = "i/o/i.jpg";

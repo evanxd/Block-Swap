@@ -46,10 +46,10 @@ header {background: #131313; height: 80px; color: #efefef; font-family: "Futura1
 				section#directions div:first-child {margin-top: 0;}
 				section#directions div h6 {font-weight: bold; text-decoration: underline; font-size: 1.2em; margin-bottom: .5em; text-shadow: 1px 1px 0 #dedede;}
 				section#directions #limit {margin-top: 15px;}
-				section#directions #limit a {font-size: 3em; text-shadow: 1px 1px 0 #dedede;}
+				section#directions #limit time {font-size: 3em; text-shadow: 1px 1px 0 #dedede;}
 				section#directions #limit img {vertical-align: bottom; margin-right: 15px; width: 35px; height: 35px;}
 
-		#puzzle {background: url("../i/o/f.jpg") no-repeat; float: right; padding: 25px; margin: 0 auto; width: 720px; height: 450px;
+		#puzzlebox {background: url("../i/o/f.jpg") no-repeat; float: right; padding: 25px; margin: 0 auto; width: 720px; height: 450px;
 			-webkit-transform: rotateX(1deg);
 			-moz-transform: rotateX(1deg);
 			-o-transform: rotateX(1deg);
@@ -59,14 +59,13 @@ header {background: #131313; height: 80px; color: #efefef; font-family: "Futura1
 /*			Misc Visual Classes			*/
 /********************************/
 
-body.active #puzzlebox > canvas {cursor: pointer;}
-.cta, .cta * {
+canvas.playing, .cta, .cta * {
 	cursor: pointer;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	-o-user-select: none;
 	user-select: none;
 }
 
@@ -75,8 +74,7 @@ body.active #puzzlebox > canvas {cursor: pointer;}
 /************************/
 
 .cta-puz {position: relative; background: #131313; width: 120px; height: 44px;}
-	.cta-puz a {text-decoration: none;}
+	.cta-puz p {font-size: 1.8em; font-family: "Futura1"; padding: .45em 0 0 1em; color: #dedede;}
 	.cta-puz:hover p {color: #bcbcbc;}
-	.cta-puz a p {font-size: 1.8em; font-family: "Futura1"; padding: .45em 0 0 1em; color: #dedede;}
 	.cta-puz:after {left: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none;}
 	.cta-puz:after {border-left-color: #131313; border-width: 22px; top: 50%; margin-top: -22px;}

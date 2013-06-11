@@ -26,7 +26,10 @@
 					<h6>How To Play</h6>
 					<p>Select two puzzle pieces at a time to swap their positions</p>
 					<p id="limit">
-						<img src="i/o/clock.png" /><a id="minutes">5</a>:<a id="seconds">00</a>
+						<img src="i/o/clock.png" />
+						<time>
+							<a id="mins">5</a>:<a id="secs">00</a>
+						</time>
 					</p>
 				</div>
 				<div>
@@ -35,12 +38,12 @@
 				</div>
 				<div class="cta" onclick="startTimer(); init();">
 					<div class="cta-puz">
-						<a><p id="cta-puz-play">Play Puzzle</p></a>
+						<p id="cta-puz-play">Play Puzzle</p>
 					</div>
 				</div>
 			</section><!-- #directions -->
-			<div id="puzzle">
-				<canvas id="can-puz" width="720" height="450" onclick="selectPiece(event);"></canvas>
+			<div id="puzzlebox">
+				<canvas id="puzzle" width="720" height="450" onclick="selectPiece(event);"></canvas>
 			</div>
 		</main><!-- #contents -->
 	</div><!-- #container -->
