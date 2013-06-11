@@ -1,9 +1,15 @@
 // Block-Swapper Puzzle Script
 // Inherited from Rhuno's Puzzle tutorial
-// http://rhuno.com/flashblog/2012/08/01/tutorial-puzzle-game-basics-with-html5-and-javascript/
+// http://goo.gl/9StLQ
 
-//"use strict";
-// function to check is canvas is supported
+// NOTES:
+//
+// Sometimes when clicking the play CTA the puzzle init() does not run, but startTimer() will
+// refreshing will usually solve this problem
+
+//"use strict"; disabled because apparently this script is not strict enough
+
+// function to check if canvas is supported
 function canvasSupport() {
 	var elem = document.createElement('canvas');
 	return !!(elem.getContext && elem.getContext('2d'));
