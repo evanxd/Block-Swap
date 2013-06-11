@@ -1,6 +1,6 @@
 // Block-Swapper Puzzle Script
-// Inherited from Rhuno's Puzzle tutorial
-// http://goo.gl/9StLQ
+// Inherited from Rhuno's Puzzle tutorial - http://goo.gl/9StLQ
+// Indirectly licensed under CC0-1.0 - http://goo.gl/Y8aH
 
 // NOTES:
 //
@@ -25,12 +25,15 @@ else {
 	var can, ctx, img, clickX, clickY, selected1, selected2;
 	var piecesArray = [];
 	var puzzleLoaded = false;
+	
 	// column and row lengths
 	var cols = 8;
 	var rows = 5;
 	var totalPieces = cols * rows;
+	
 	// contextually, size must be evenly divisible in to canvas height/width
 	var pieceSize = 90;
+	
 	// piece highlight options
 	// NOTE: This functionality is not very dynamic and works off canvas support
 	var strokeSize = 3;
