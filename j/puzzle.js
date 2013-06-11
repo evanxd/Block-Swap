@@ -1,18 +1,22 @@
-// Block-Swapper Puzzle Script
+// Block-Swapper Puzzle Script - June 2013
 // Inherited from Rhuno's Puzzle tutorial - http://goo.gl/9StLQ
 // Indirectly licensed under CC0-1.0 - http://goo.gl/Y8aH
 
 // NOTES:
 //
 // Sometimes when clicking the play CTA the puzzle init() does not run, but startTimer() will
-// refreshing will usually solve this problem
+// refreshing will usually solve this problem.
+//
+// This puzzle can be altered to scale its pieces and sizes based on the image used,
+// for now, it is fixed but can be adjusted at a later time.
 
-//"use strict"; disabled because apparently this script is not strict enough
+// disabled because apparently this script is not strict enough
+//"use strict";
 
 // function to check if canvas is supported
 function canvasSupport() {
-	var elem = document.createElement('canvas');
-	return !!(elem.getContext && elem.getContext('2d'));
+	var elt = document.createElement('canvas');
+	return !!(elt.getContext && elt.getContext('2d'));
 };
 
 // only enable puzzle functionality if canvas support exists
@@ -20,12 +24,16 @@ if (!canvasSupport) {
 	alert("Your browser does not support Canvas! You must be using Internet Explorer 8 or older - Please maim yourself and update your browser.")
 } else {
 
-	// define variables
-	var can, ctx, img, clickX, clickY, selected1, selected2;
+	// define global variables
+	var puzzleLoaded, img,
+			can, canW, canH, ctx,
+			clickX, clickY,
+			selected1, selected2;
+			
+	// set an array for our pieces
 	var piecesArray = [];
-	var puzzleLoaded = false;
 	
-	// column and row lengths
+	// set column and row lengths
 	var cols = 8;
 	var rows = 5;
 	var totalPieces = cols * rows;
@@ -40,11 +48,13 @@ if (!canvasSupport) {
 	
 	function init() {
 				
-		if (puzzleLoaded === true) {
+		if (puzzleLoaded == true) {
 			return;
 		};
 
 		can = document.getElementById("puzzle");
+		canW = can.width;
+		canH = can.height;
 		can.className = "playing";
 		ctx = can.getContext('2d');
 
@@ -85,7 +95,7 @@ if (!canvasSupport) {
 		drawX *= pieceSize;
 		drawY *= pieceSize;
 	
-		ctx.clearRect(0, 0, 720, 450);
+		ctx.clearRect(0, 0, canW, canH);
 	
 		if (selected1 != undefined && selected2 != undefined) {
 			selected1 = selected2 = undefined;
