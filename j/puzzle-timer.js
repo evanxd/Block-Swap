@@ -1,3 +1,5 @@
+var timer = document.getElementById("timer");
+var clock = document.getElementById("clock");
 var min = document.getElementById("mins");
 var sec = document.getElementById("secs");
 var timerStarted;
@@ -36,6 +38,10 @@ var timerStarted;
 			countdown: function() {
 				Timer.updateTime();
 				Timer.updateDisplay();
+				if (Timer.totalSeconds <= 59) {
+					timer.className = "hurry";
+					clock.src = "i/o/c-a.png"
+				}
 				if (Timer.totalSeconds === 0) {
 					window.alert("Time's up!");
 				} else {

@@ -10,7 +10,7 @@
 		<nav>
 			<a href="index.html"><div id="logo"></div></a>
 			<ol>
-				<li><a href="#">Introduction</a></li><li><a href="#">Digital Exhibition</a></li><li><a href="#">Gallery</a></li><li><a href="#">Games</a></li>
+				<li><a href="#">Introduction</a></li><li><a href="#">Digital Exhibition</a></li><li><a href="#">Artist Gallery</a></li><li><a href="#" class="current">Portrait Puzzle</a></li>
 			</ol>
 		</nav>
 	</header>
@@ -21,29 +21,29 @@
 				<div>
 					<h6>What Is This?</h6>
 					<p>A block-swapping puzzle game where you must re-complete the image before the timer runs out!</p>
-				</div>
-				<div>
-					<h6>How To Play</h6>
-					<p>Select two puzzle pieces at a time to swap their positions</p>
-					<p id="limit">
-						<img src="i/o/clock.png" />
+					<p id="timer">
+						<img id="clock" src="i/o/c.png" />
 						<time>
 							<a id="mins">5</a>:<a id="secs">00</a>
 						</time>
 					</p>
 				</div>
 				<div>
+					<h6>How To Play</h6>
+					<p>Select two puzzle pieces at a time to swap their positions</p>
+				</div>
+				<div>
 					<h6>Your Reward</h6>
 					<p>A royalty-free, downloadable .zip of Boccioni's artwork featured on this site</p>
 				</div>
-				<div class="cta" class="ds" onclick="startTimer(); init();">
+				<div class="cta" onclick="startTimer(); init();">
 					<div class="cta-puz">
 						<p id="cta-puz-play">Play Puzzle</p>
 					</div>
 				</div>
 			</section><!-- #directions -->
 			<div id="puzzlebox">
-				<canvas id="puzzle" width="720" height="450" onclick="selectPiece(event);"></canvas>
+				<canvas id="puzzle" width="640" height="400" onclick="selectPiece(event);"></canvas>
 			</div>
 		</main><!-- #contents -->
 	</div><!-- #container -->

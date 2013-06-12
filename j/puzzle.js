@@ -9,6 +9,10 @@
 //
 // This puzzle can be altered to scale its pieces and sizes based on the image used,
 // for now, it is fixed but can be adjusted at a later time.
+//
+// TO DO:
+// Win conditions: Add function to check if piece is in correct position
+// - Stop timer if all pieces are correct
 
 // disabled because apparently this script is not strict enough
 //"use strict";
@@ -39,7 +43,7 @@ if (!canvasSupport) {
 	var totalPieces = cols * rows;
 	
 	// contextually, size must be evenly divisible in to canvas height/width
-	var pieceSize = 90;
+	var pieceSize = 80;
 	
 	// piece highlight options
 	// NOTE: This functionality is not very dynamic and works off canvas support
