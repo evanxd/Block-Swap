@@ -30,13 +30,13 @@ header {background: #131313; height: 80px; color: #efefef; font-family: "Futura1
 			header nav ol li a:active {color: #bcbcbc;}
 			/* Section specific coloring */
 			header nav ol li:nth-child(1) a:hover,
-			header nav ol li:nth-child(1) a.current {color: #fefc56;}
+			header nav ol li:nth-child(1) a.current {color: #fefc56; /*yellow*/}
 			header nav ol li:nth-child(2) a:hover,
-			header nav ol li:nth-child(2) a.current {color: #a9935c;}
+			header nav ol li:nth-child(2) a.current {color: #a9935c; /*brown*/}
 			header nav ol li:nth-child(3) a:hover,
-			header nav ol li:nth-child(3) a.current {color: #77b272;}
+			header nav ol li:nth-child(3) a.current {color: #77b272; /*green*/}
 			header nav ol li:nth-child(4) a:hover,
-			header nav ol li:nth-child(4) a.current {color: #80a1a5;}
+			header nav ol li:nth-child(4) a.current {color: #80a1a5; /*blue*/}
 
 /********************/
 /*			Content			*/
