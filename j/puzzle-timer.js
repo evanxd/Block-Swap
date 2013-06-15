@@ -9,9 +9,7 @@ var time = 7500; // total seconds, 7500 = 5 minutes
 		"use strict";
 		
 		// prevent the timer from being restarted if it is already started
-		if (timerStarted == true) {
-			return;
-		};
+		if (timerStarted == true) {return};
 		timerStarted = true;
 
 		var Timer = {
