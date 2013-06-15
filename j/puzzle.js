@@ -12,7 +12,7 @@
 //
 // TO DO:
 // Win conditions: Add function to check if piece is in correct position
-// - Stop timer if all pieces are correct
+// - Stop timer if all pieces are correct 
 
 // disabled because apparently this script is not strict enough
 //"use strict";
@@ -84,6 +84,10 @@ if (!canvasSupport) {
 	};
 
 	function selectPiece(e) {
+	
+		if (puzzleLoaded == false) {
+			return;
+		};
 
 		clickX = e.offsetX;
 		clickY = e.offsetY;

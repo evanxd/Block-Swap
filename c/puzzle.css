@@ -85,9 +85,8 @@ canvas.playing, .cta, .cta * {
 /*			CTA Styling			*/
 /************************/
 
-.cta-puz {border-radius: 22px 0 0 22px; position: relative; background: #131313; width: 120px; height: 44px; border: 2px solid #dedede; border-right: 0;}
+.cta-puz {/*border-radius: 22px 0 0 22px;*/ position: relative; background: #131313; width: 120px; height: 44px; border: 2px solid #dedede; border-right: 0;}
 	.cta-puz p {font-size: 1.8em; font-family: "Futura1"; padding: .45em 0 0 1.1em; color: #dedede;}
-	.cta-puz:hover p {color: #bcbcbc;}
 	
 .cta-puz:after, .cta-puz:before {
 	left: 100%;

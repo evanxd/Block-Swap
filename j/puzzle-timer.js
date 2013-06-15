@@ -1,23 +1,23 @@
 var timer = document.getElementById("timer");
 var clock = document.getElementById("clock");
-var min = document.getElementById("mins");
-var sec = document.getElementById("secs");
-var timerStarted;
+var timerStarted, puzzleLoaded;
+
+var time = 7500; // total seconds, 7500 = 5 minutes
 
   function startTimer() {
   
 		"use strict";
 		
-		// prevent the timer from being restarting itself
+		// prevent the timer from being restarted if it is already started
 		if (timerStarted == true) {
 			return;
 		};
 		timerStarted = true;
 
 		var Timer = {
-			totalSeconds: 7500,
-			minutesDiv: min,
-			secondsDiv: sec,
+			totalSeconds: time,
+			minutesDiv: document.getElementById("mins"),
+			secondsDiv: document.getElementById("secs"),
 		
 			pad: function(num, size) {
 				var s = num + "";
@@ -30,7 +30,7 @@ var timerStarted;
 				this.seconds = (((this.totalSeconds % 31536000) % 86400) % 3600) % 60;
 			},
 		
-			updateDisplay:function() {
+			updateDisplay: function() {
 				this.minutesDiv.innerHTML = this.pad(this.minutes);
 				this.secondsDiv.innerHTML = this.pad(this.seconds, 2);
 			},
@@ -38,12 +38,30 @@ var timerStarted;
 			countdown: function() {
 				Timer.updateTime();
 				Timer.updateDisplay();
+				// Less than one minute left
 				if (Timer.totalSeconds <= 59) {
 					timer.className = "hurry";
 					clock.src = "i/o/c-a.png"
-				}
-				if (Timer.totalSeconds === 0) {
-					window.alert("Time's up!");
+				};
+				// Out of time
+				if (Timer.totalSeconds == 0) {
+					// Unload puzzle and timer
+					puzzleLoaded = false;
+					timerStarted = false;
+					// Clear puzzle
+					can = document.getElementById("puzzle");
+					canW = can.width;
+					canH = can.height;
+					can.className = "not-playing";
+					ctx = can.getContext('2d');
+					ctx.clearRect(0, 0, canW, canH);
+					// remove red alert from time
+					timer.className = "";
+					clock.src = "i/o/c.png";
+					// Set time back to original
+					Timer.totalSeconds = time;
+					Timer.updateTime();
+					Timer.updateDisplay();
 				} else {
 					Timer.totalSeconds -= 1;
 					window.setTimeout(Timer.countdown, 1000);
@@ -51,4 +69,5 @@ var timerStarted;
 			}
 		};
 		Timer.countdown();
+		
 	};
