@@ -10,17 +10,17 @@ Download the example folder and view the index.html in a supported web browser.
 
 Features
 ===
-Basic Javascript only
-Firefox 21 Support
-Chrome 27.0.1453.110 Support
+- Uses only core Javascript
+
+Browser Supprt:
+- Firefox 21
+- Chrome 27.0.1453.110
+- Safari 6.0.5 (8536.30.1)
+- Opera 12.12
 
 Bugs
 =====
-- When the window is loaded, sometimes the puzzle does not visually appear. Clicking on the puzzle will render the pieaces.
-
-- Timer doesnt always reset when hitting "0".
-
-- Timer some times will trim extra seconds and not show a consistent countdown.
+- Sometimes the Puzzle.Init function does not fire properly making the puzzle image not load unless the canvas is clicked.
 
 To Do
 ===
