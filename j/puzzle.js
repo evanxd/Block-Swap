@@ -50,7 +50,9 @@
 	
 		function init() {
 				
-			if (puzzleLoaded == true) {return};
+			if (puzzleLoaded == true) {
+				return;
+			};
 
 			can = document.getElementById("puzzle");
 			canW = can.width;
@@ -82,21 +84,19 @@
 
 		function selectPiece(e) {
 	
-			if (puzzleLoaded == false) {return};
-			
-			clickX = e.offsetX==undefined?e.layerX:e.offsetX;
-			clickY = e.offsetY==undefined?e.layerY:e.offsetY;
-			
-			// Not working on firefox
-			//clickX = e.offsetX;
-			//clickY = e.offsetY;
+			if (puzzleLoaded == false) {
+				return;
+			};
+
+			clickX = e.offsetX;
+			clickY = e.offsetY;
 	
 			var drawX = Math.floor(clickX / pieceSize);
 			var drawY = Math.floor(clickY / pieceSize);
-			
+	
 			var index = drawX * rows + drawY;
+	
 			var targetPiece = piecesArray[index];
-			//alert(piecesArray[index]);
 			var drawHighlight = true;
 	
 			drawX *= pieceSize;
@@ -105,16 +105,13 @@
 			ctx.clearRect(0, 0, canW, canH);
 	
 			if (selected1 != undefined && selected2 != undefined) {
-			  //alert("working1");
 				selected1 = selected2 = undefined;
 			};
 	
 			if (selected1 == undefined) {
-				//alert("working2");
 				selected1 = targetPiece;
 			}
 			else {
-				//alert("working3");
 				selected2 = targetPiece;
 				swapPieces(selected1, selected2);
 				drawHighlight = false;
@@ -162,7 +159,7 @@
 			}
 		};
 
-		function scramblePieces(array, times) {
+		function scramblePieces(ar, times) {
 			var count = 0;
 			var temp;
 			var index1;
