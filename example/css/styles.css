@@ -1,0 +1,54 @@
+/********************/
+/*			Layout			*/
+/********************/
+
+body {background: #000000 url("../images/bg.jpg") no-repeat; background-size: cover;}
+
+/********************/
+/*			Content			*/
+/********************/
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#timer {
+	display: block;
+	padding: .5em;
+	color: #dedede;
+	font-size: 4em;
+	font-family: "Impact";
+	letter-spacing: 5px;
+	text-shadow: 1px 1px 0 #131313;
+	text-align: center;
+}
+
+#puzzlebox {
+	width: 640px;
+	height: 400px;
+	margin: 0 auto;
+	background: rgba(10, 10, 10, 0.75);
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: inset 0 0 15px 5px #131313;
+}
+
+#puzzle {
+	position: relative; /* position pieces properly */
+}
+		
+/********************************/
+/*			Misc Visual Classes			*/
+/********************************/
+
+canvas.playing {
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;}
+	
+.hurry {color: red;}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Block Swapper</title>
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+	<div id="container" class="cf">
+
+			<time id="timer">
+				<a id="mins">5</a>:<a id="secs">00</a>
+			</time>
+		
+		<div id="puzzlebox">
+			<canvas id="puzzle" width="640" height="400" onclick="Puzzle.PickPiece(event);"></canvas>
+		</div>
+			
+	</div><!-- #container -->
+
+</body>
+
+<!--[if IE]><script type="text/javascript" src="../j/ie-canvas-polyfill.js"></script><![endif]-->
+<script type="text/javascript" src="js/block-swapper_v0.1.js"></script>
+
+</html>
