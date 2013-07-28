@@ -1,11 +1,6 @@
 // Last jsLint: 7/9/13
 //
 
-Beta Merge
-===
-
-Merged the beta branch in to the master branch
-
 Nightly v.0.3.6
 ===
 

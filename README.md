@@ -1,7 +1,7 @@
 About Block-Swap
 ===
 
-Block-Swap is a JS experiment aiming to create a scalable, adaptable, cross-browser friendly puzzle script using HTML5 Canvas. The original concept and functionality of this script was inherited from Rhuno's Puzzle tutorial - http://goo.gl/9StLQ.
+*Block-Swap* is a *JavaScript* experiment aiming to create a scalable, adaptable, cross-browser friendly puzzle script using *HTML5 Canvas*. The original concept and functionality of this script was inherited from Rhuno's Puzzle tutorial - http://goo.gl/9StLQ.
 
 Browser Support:
 ===
@@ -12,6 +12,13 @@ Browser Support:
 - Opera 12+
 
 For browsers that do not support HTML5 tags, HTML5Shiv has been included
+
+Usage:
+===
+
+Demo: Currently you can view the working progress of Block-Swap by viewing the index.html
+
+Download: The most stable version is kept in the *src* folder along with nightly edits. The most current version is attached to the demo and is always kept working - bugs conditional
 
 Bugs
 ===
