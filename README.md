@@ -16,6 +16,7 @@ For browsers that do not support HTML5 tags, HTML5Shiv has been included
 Bugs
 ===
 
+- The block outline function needs to be reset in order to remove the original outline
 - Clicking too fast on the canvas can yield an undefined mouse position
 - Selection and swapping seems a bit sluggish on Mozilla compared to Webkit based browsers
 

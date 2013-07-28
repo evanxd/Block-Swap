@@ -6,7 +6,7 @@ var allDivisors = function(num1, num2, min) {
   var i, n1, n2, ns, n = [], divisors = [],
 		    x = Math.floor(num1 / min),
 		    y = Math.floor(num2 / min);
-		if (min === undefined) { x = 1; y = x; };
+		if (!min) { x = 1; y = x; };
 		while (x <= num1 && y <= num2) {
 				n1 = Math.floor(num1 / x);
 				n2 = Math.floor(num2 / y);
@@ -45,7 +45,7 @@ var	Puzzle = {
 	 // Let us prepare a few things like setting up some definitions and sizing some elements
 		setup : function() {
 				this.canvas = canvasElement;
-				// Store the parent of the canvas so we can
+				// Store the parent of the canvas so we can later
 				// size it dynamically based on the size of our canvas
 				this.canvasParent = canvasElement.parentNode;
 				this.mask = canvasMask;
