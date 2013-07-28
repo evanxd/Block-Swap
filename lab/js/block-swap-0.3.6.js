@@ -238,6 +238,7 @@ var	Puzzle = {
 				canvasElement.addEventListener("click", function(e) {
 						that.selectBlock(e);
 				}, false);
+				// mouse effects
 				canvasElement.addEventListener("mousemove", function(e) {
 						if (enableHover !== false) {
 								var rect = canvasElement.getBoundingClientRect(),

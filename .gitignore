@@ -1,8 +1,3 @@
-# Ignore Photoshop files #
-##########################
-PSD/
-*.psd
-
 # Compiled source #
 ###################
 *.com
@@ -40,3 +35,6 @@ PSD/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.DS_Store
+
+.DS_Store
