@@ -14,6 +14,9 @@ function canvasSupport(){
 	return !!(elt.getContext && elt.getContext('2d'));
 };
 // enable puzzle functionality if canvas support exists
+
+
+
 if (!canvasSupport || disablePuzzle === true){
 	alert("Your browser does not support Canvas or the script is disabled!")
 } else {
@@ -30,9 +33,13 @@ if (!canvasSupport || disablePuzzle === true){
 	var pieceSize = 80;
 	var strokeSize = 2;
 	var strokeColor = "#ffffff";
-	var piecesArray = [];
+	
+
+
 	
 	Puzzle = {
+	
+		Pieces : [],
 	
 		ActivatePiece: function(drawX, drawY) {
 			//console.log(drawX, drawY);
@@ -43,6 +50,10 @@ if (!canvasSupport || disablePuzzle === true){
 			ctx.lineTo(drawX, drawY + pieceSize);
 			ctx.lineTo(drawX, drawY);
 			ctx.lineWidth = strokeSize;
+			
+			//x = document.createElement('div');
+			//can.innerHTML(x)
+			
 			// set stroke color
 			ctx.strokeStyle = strokeColor;
 			ctx.stroke();
@@ -54,18 +65,19 @@ if (!canvasSupport || disablePuzzle === true){
 			var index1;
 			var index2;
 			while (count < times) {
-				index1 = Math.floor(Math.random()*piecesArray.length);
-				index2 = Math.floor(Math.random()*piecesArray.length);
+				index1 = Math.floor(Math.random()*Puzzle.Pieces.length);
+				index2 = Math.floor(Math.random()*Puzzle.Pieces.length);
 		
-				temp = piecesArray[index1];
-				piecesArray[index1] = piecesArray[index2];
-				piecesArray[index2] = temp;
+				temp = Puzzle.Pieces[index1];
+				Puzzle.Pieces[index1] = Puzzle.Pieces[index2];
+				Puzzle.Pieces[index2] = temp;
 		
 				count++;
 			}
 		},
 	
 		MakePiece: function(left, top, right, bottom) {
+		
 			this.left = left;
 			this.top  = top;
 			this.right = right;
@@ -81,11 +93,11 @@ if (!canvasSupport || disablePuzzle === true){
 			for (var c = 0; c < cols; c++) {
 				for (var r = 0; r < rows; r++) {
 					p = new Puzzle.MakePiece(c * pieceSize, r * pieceSize, c*pieceSize + pieceSize, r * pieceSize + pieceSize);
-					piecesArray.push(p);
+					Puzzle.Pieces.push(p);
 					
 				};	
 			};
-			Puzzle.ScramblePieces(piecesArray, totalPieces);
+			Puzzle.ScramblePieces(Puzzle.Pieces, totalPieces);
 			Puzzle.DrawPieces();			
 		},
 	
@@ -94,17 +106,17 @@ if (!canvasSupport || disablePuzzle === true){
 			var index2;
 			var temp = p1;
 	
-			index1 = piecesArray.indexOf(p1);
-			index2 = piecesArray.indexOf(p2);
+			index1 = Puzzle.Pieces.indexOf(p1);
+			index2 = Puzzle.Pieces.indexOf(p2);
 	
-			piecesArray[index1] = p2;
-			piecesArray[index2] = temp;			
+			Puzzle.Pieces[index1] = p2;
+			Puzzle.Pieces[index2] = temp;			
 		},
 		
 		DrawPieces: function(){
 			for (var c = 0; c < cols; c++) {
 				for (var r = 0; r < rows; r++) {
-					p = piecesArray[c*rows+r];
+					p = Puzzle.Pieces[c*rows+r];
 					// use to find piece scramble locations
 					//alert("piece 1")
 					ctx.drawImage(img, p.left, p.top, p.width, p.height, c*pieceSize, r*pieceSize, pieceSize, pieceSize);
@@ -114,7 +126,6 @@ if (!canvasSupport || disablePuzzle === true){
 		},
 	
 		PickPiece: function(e) {
-			
 			// enable piece selection in Firefox
 			clickX = e.offsetX == undefined ? e.layerX: e.offsetX;
 			clickY = e.offsetY == undefined ? e.layerY: e.offsetY;
@@ -123,7 +134,7 @@ if (!canvasSupport || disablePuzzle === true){
 			var drawY = Math.floor(clickY / pieceSize);
 			
 			var index = drawX * rows + drawY;
-			var targetPiece = piecesArray[index];
+			var targetPiece = Puzzle.Pieces[index];
 			var thisPiece = true;
 	
 			drawX *= pieceSize;
@@ -210,8 +221,8 @@ if (!canvasSupport || disablePuzzle === true){
 				}
 			};
 			Timer.countdown();
-			
 		},
+		
 		Init: function() {
 	
 			can = document.getElementById("puzzle");
@@ -237,3 +248,6 @@ if (!canvasSupport || disablePuzzle === true){
 }//close else statement
 
 window.addEventListener('load', Puzzle.Init);
+
+//var toybox = function exists(){!canvasSupport || Puzzle.Init };
+//if(toybox){alert("game started")};
